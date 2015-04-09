@@ -4,7 +4,7 @@
 
 echo -e "Stopped existing docker compose instances"
 
-tar -cvzf dbdata.tar /dbdata
+tar -cjf dbdata.tar -C /dbdata .
 
 echo -e  "Took backup of existing data"
 
@@ -20,7 +20,7 @@ rm -i -rf /dbdata/*
 
 echo -e "removed all files in mounted volume"
 
-tar -xf dbdata.tar -C /dbdata
+tar -xf dbdata.tar -C /dbdata .
 
 echo -e "Restored the entire database"
 

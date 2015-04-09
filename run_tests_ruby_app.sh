@@ -16,11 +16,17 @@ echo -e "Built Docker Image"
 
 echo -e "Brought up docker compose "
 
-rm /dbdata/*
+setopt RMSTARSILENT
+
+rm -i -rf /dbdata/*
+
+unsetopt RMSTARSILENT
 
 echo -e "removed all files in mounted volume"
 
-tar -cf dbdata.tar /dbdata
+tar -xvf dbdata.tar /dbdata
+
+echo -e "Restored the entire database"
 
 /usr/local/bin/docker-compose run web rake db:migrate
 

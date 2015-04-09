@@ -16,15 +16,11 @@ echo -e "Built Docker Image"
 
 echo -e "Brought up docker compose "
 
-setopt RMSTARSILENT
-
 rm -i -rf /dbdata/*
-
-unsetopt RMSTARSILENT
 
 echo -e "removed all files in mounted volume"
 
-tar -xvf dbdata.tar /dbdata
+tar -xf dbdata.tar -C /dbdata
 
 echo -e "Restored the entire database"
 

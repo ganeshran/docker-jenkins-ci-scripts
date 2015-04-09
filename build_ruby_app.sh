@@ -29,7 +29,5 @@ function build {
 }
 
 
-check_if_exists_and_build solr
-check_if_exists_and_build mysql
-check_if_exists_and_build rabbitmq
+check_if_exists_and_build postgres
 build ruby_app

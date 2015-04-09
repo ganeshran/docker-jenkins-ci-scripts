@@ -1,10 +1,12 @@
 #!/bin/bash
 
+pg_dump -c -h localhost -p 49153 -U postgres > backup.sql
+
+echo -e "Take backup of the entire database"
+
 /usr/local/bin/docker-compose stop
 
 echo -e "Stopped existing docker compose instances"
-
-tar -cjf dbdata.tar -C /dbdata .
 
 echo -e  "Took backup of existing data"
 
@@ -16,13 +18,9 @@ echo -e "Built Docker Image"
 
 echo -e "Brought up docker compose "
 
-rm -i -rf /dbdata/*
+psql -h localhost -p 49153 -U postgres < backup.sql
 
-echo -e "removed all files in mounted volume"
-
-tar -xf dbdata.tar -C /dbdata .
-
-echo -e "Restored the entire database"
+echo -e "Restoring entire db now"
 
 /usr/local/bin/docker-compose run web rake db:migrate
 

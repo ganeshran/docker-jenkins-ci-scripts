@@ -30,4 +30,4 @@ function build {
 
 
 check_if_exists_and_build postgres
-build ruby_app
+build Community_Service_Week

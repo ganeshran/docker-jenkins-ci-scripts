@@ -8,7 +8,7 @@ echo -e "Stopping web container only"
 
 echo -e "Built Docker Image"
 
-/usr/local/bin/docker-compose up
+/usr/local/bin/docker-compose run -d
 
 echo -e "Brought up docker compose "
 

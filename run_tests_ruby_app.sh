@@ -8,7 +8,7 @@ echo -e "Stopped existing docker compose instances"
 
 echo -e "Built Docker Image"
 
-/usr/local/bin/docker-compose run -d web
+/usr/local/bin/docker-compose start
 
 echo -e "Brought up docker compose "
 

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-/usr/local/bin/docker-compose stop
-
-echo -e "Stopped existing docker compose instances"
-
 /usr/local/bin/docker-compose build
 
 echo -e "Built Docker Image"

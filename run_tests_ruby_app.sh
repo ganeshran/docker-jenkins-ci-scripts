@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/local/bin/docker-compose stop web
+#/usr/local/bin/docker-compose stop web
 
 echo -e "Stopping web container only"
 
@@ -8,7 +8,7 @@ echo -e "Stopping web container only"
 
 echo -e "Built Docker Image"
 
-/usr/local/bin/docker-compose run -d web
+/usr/local/bin/docker-compose up -d web
 
 echo -e "Brought up docker compose "
 

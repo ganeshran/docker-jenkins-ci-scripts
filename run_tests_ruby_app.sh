@@ -4,7 +4,7 @@
 
 echo -e "Built Docker Image"
 
-/usr/local/bin/docker-compose up
+/usr/local/bin/docker-compose up -d
 
 echo -e "Brought up docker compose "
 

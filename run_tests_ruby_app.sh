@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#/usr/local/bin/docker-compose stop web
+/usr/local/bin/docker-compose stop web
 
 echo -e "Stopping web container only"
 
